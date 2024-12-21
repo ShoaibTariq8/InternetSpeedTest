@@ -1,0 +1,112 @@
+/* General reset and responsive settings */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #424141;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    width: 100%;
+}
+
+p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #4CAF50;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s forwards;
+}
+
+#status {
+    font-size: 1em;
+    color: #e46165;
+    margin-top: 15px;
+    opacity: 0;
+    animation: fadeIn 1s 0.5s forwards;
+
+}
+
+#status.testing {
+    animation: pulse2 1s infinite;
+}
+/* Button styling */
+#start-button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Button animation on click */
+#start-button.testing {
+    background-color: #2E7D32;
+    animation: pulse 1s infinite;
+    transform: scale(1.1);
+}
+
+/* Hover effect */
+#start-button:hover {
+    transform: scale(1.05);
+}
+
+/* Animation for content appearance */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loader animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        background-color: #4CAF50;
+    }
+    50% {
+        transform: scale(1.1);
+        background-color: #2E7D32;
+    }
+}
+
+@keyframes pulse2 {
+    0%, 100% {
+        transform: scale(1);
+        background-color: #e46165;
+        color: #fff;
+    }
+    50% {
+        transform: scale(1.1);
+        background-color: #fff;
+        color: #e46165;
+    }
+}
+/* Mobile-friendly adjustments */
+@media (max-width: 400px) {
+    .container {
+        max-width: 90%;
+    }
+}
